@@ -1,5 +1,6 @@
 __pycache__/
 .DS_Store
-models_saved/*.pkl
+.venv/
 *.npz
 notebooks/gerador_relatorio.py
+models_saved/knn.pkl
