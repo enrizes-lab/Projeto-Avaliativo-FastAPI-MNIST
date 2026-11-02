@@ -46,3 +46,4 @@ async def health_check(request: Request) -> HealthResponse:
         n_features_expected=metadata["n_features_expected"],
         available_models=metadata["available_models"]
     )
+

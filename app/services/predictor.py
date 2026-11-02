@@ -93,8 +93,11 @@ class PredictorService:
 
         # Tratamento de canais: Alfa, RGB ou Escala de cinza
         if len(img.shape) == 3 and img.shape[2] == 4:
-            # Canal alfa (transparência de desenho)
-            img = img[:, :, 3]
+            # Se o canal alfa for totalmente opaco (255), extrai a imagem RGB; caso contrário usa o alfa
+            if np.all(img[:, :, 3] == 255):
+                img = cv2.cvtColor(img[:, :, :3], cv2.COLOR_BGR2GRAY)
+            else:
+                img = img[:, :, 3]
         elif len(img.shape) == 3 and img.shape[2] == 3:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

@@ -120,3 +120,4 @@ def test_predict_bad_request_malformed_base64(client):
     assert response.status_code == 400
     data = response.json()
     assert data["status_code"] == 400
+

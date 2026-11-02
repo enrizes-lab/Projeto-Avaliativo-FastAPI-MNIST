@@ -81,3 +81,4 @@ async def predict_digit_v1(
 ) -> PredictionResponse:
     predictor = get_predictor_service(request)
     return execute_prediction(payload, predictor)
+
