@@ -112,6 +112,11 @@ pip install -r requirements.txt
 ### Passo 4: Executar a API com Uvicorn
 Inicie o servidor de aplicação ASGI:
 ```bash
+# Opção direta:
+.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Ou com ambiente virtual ativado:
+source .venv/bin/activate
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 A aplicação estará disponível em `http://127.0.0.1:8000`.
@@ -119,6 +124,11 @@ A aplicação estará disponível em `http://127.0.0.1:8000`.
 ### Passo 5: Executar os Testes Automatizados
 Para verificar a conformidade de todos os endpoints e regras de validação:
 ```bash
+# Opção direta:
+.venv/bin/pytest tests/test_api.py -v
+
+# Ou com ambiente virtual ativado:
+source .venv/bin/activate
 pytest tests/test_api.py -v
 ```
 
